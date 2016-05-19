@@ -21,6 +21,7 @@ import org.apache.lucene.analysis.standard.StandardFilter;
 import org.apache.lucene.analysis.standard.StandardTokenizer;
 import org.apache.lucene.analysis.tokenattributes.TermAttribute;
 import org.apache.lucene.util.Version;
+import org.apache.mahout.clustering.lda.LDADriver;
 
 public class MyAnalyzer extends Analyzer {
   
@@ -32,6 +33,7 @@ public class MyAnalyzer extends Analyzer {
     result = new StandardFilter(result);
     result = new LowerCaseFilter(result);
     result = new StopFilter(true, result, StandardAnalyzer.STOP_WORDS_SET);
+    LDADriver ldaDriver;
     
     TermAttribute termAtt = (TermAttribute) result.addAttribute(TermAttribute.class);
     StringBuilder buf = new StringBuilder();

@@ -8,6 +8,7 @@ import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.SequenceFile;
 import org.apache.hadoop.io.Text;
+import org.apache.lucene.benchmark.utils.ExtractReuters;
 import org.apache.mahout.math.DenseVector;
 import org.apache.mahout.math.NamedVector;
 import org.apache.mahout.math.VectorWritable;
@@ -60,5 +61,7 @@ public class ApplesToVectors {
       System.out.println(key.toString() + " " + value.get().asFormatString());
     }
     reader.close();
+
+    ExtractReuters reuters;
   }
 }
